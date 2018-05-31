@@ -124,7 +124,7 @@ describe('Functional JavaScript', () => {
       expect(x(1, 2)).toEqual(undefined)
     })
   })
-  describe('Part 9: Factories', () => {
+  describe.skip('Part 9: Factories', () => {
     it('calls from', () => {
       x = fromf(0)
       expect(typeof x).toBe('function')
@@ -156,7 +156,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toEqual(undefined)
     })
   })
-  describe('Part 10: More factories', () => {
+  describe.skip('Part 10: More factories', () => {
     it('calls element', () => {
       x = element(['a', 'b', 'c', 'd'], fromTo(1, 3))
       expect(typeof x).toBe('function')
@@ -201,7 +201,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toEqual(undefined)
     })
   })
-  describe('Part 11: Funwith what we have learned', () => {
+  describe.skip('Part 11: Funwith what we have learned', () => {
     it('calls gensymf', () => {
       x = gensymf('G')
       y = gensymf('H')
@@ -223,7 +223,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toBe(5)
     })
   })
-  describe('Part 12: Return Objects', () => {
+  describe.skip('Part 12: Return Objects', () => {
     it('calls counter', () => {
       x = counter(10)
       expect(x.up()).toBe(11)
@@ -239,7 +239,7 @@ describe('Functional JavaScript', () => {
       expect(rev_add(3, 4)).toBe(undefined)
     })
   })
-  describe('Part 13: g functions', () => {
+  describe.skip('Part 13: g functions', () => {
     it('calls addg', () => {
       expect(addg()).toBe(undefined)
       expect(addg(2)()).toBe(2)
@@ -253,7 +253,7 @@ describe('Functional JavaScript', () => {
       expect(liftg(mul)(1)(2)(4)(8)()).toBe(64)
     })
   })
-  describe('Part 14: Some final challenges', () => {
+  describe.skip('Part 14: Some final challenges', () => {
     it('calls join', () => {
       x = join(div, fibonaccif(3, 5), fibonaccif(2, 3))
       expect(x()).toBe(1.5)
