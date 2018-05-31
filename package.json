@@ -1,0 +1,28 @@
+{
+  "name": "functional-js",
+  "version": "1.0.0",
+  "description": "Little challenge repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshgreenwell/functional-js.git"
+  },
+  "keywords": [
+    "js",
+    "functional",
+    "javascript",
+    "challenge"
+  ],
+  "author": "Josh Greenwell <joshgreenwell99@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshgreenwell/functional-js/issues"
+  },
+  "homepage": "https://github.com/joshgreenwell/functional-js#readme",
+  "dependencies": {
+    "jest": "^23.1.0"
+  }
+}
