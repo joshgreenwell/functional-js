@@ -41,6 +41,11 @@ I recommend that you start by implementing the `identity` function, as it is the
 test your environment is setup correctly.
 <br />
 <br />
+As a final note, this may seem trivial at first, but it will quickly ramp up and test your knowledge of JavaScript and
+<br />
+some of the key concepts of the language
+<br />
+<br />
 Good luck! :)
 
 ## Testing
@@ -65,3 +70,7 @@ a retest if it detects any changes.
 *TODO: Make better lol*
 <br />
 Create a new pull request to the answers branch from your fork.
+
+## Credit
+
+Thanks to *Douglas Crockford* for the great class in functional JavaScript
