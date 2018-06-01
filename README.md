@@ -67,9 +67,16 @@ a retest if it detects any changes.
 
 ## Submitting
 
-*TODO: Make better lol*
+If you want to submit your answers so others can view how you solved the problems, please follow these steps.
 <br />
-Create a new pull request to the answers branch from your fork.
+<br />
+First, fork the repo. Next, you will want to create a folder in your forked repo follow this pattern:
+```
+rootDir/answers/<github-username>/
+```
+When you have completed the challenge, move your `index.js` into the folder you created.
+<br /> 
+Now, create a new pull request to the `answers` branch, of the main repo, from your fork.
 
 ## Credit
 

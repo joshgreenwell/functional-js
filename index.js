@@ -137,9 +137,51 @@ export const limit = () => {}
 // Catagory 3: Advanced
 // _____________________________________________________________
 
+// Write a function that takes a value as a parameter and
+// returns a function. When the returned function is called it
+// should return one more than the previous value returned,
+// starting with the value passed in.
+// Ex. let fn = from(3)
+//     fn() -> 3
+//     fn() -> 4
+//     fn() -> 5
+//     ...
+//     fn() -> infinity
 export const from = () => {}
+
+// Write a function that takes a function and a value as
+// parameters and returns a function. When the returned function
+// is called it should return the value of the passed function,
+// incrementing by the passed functions return value each call
+// until reaching the value passed, then only undefined should be
+// returned. The function passed should be a generator function.
+// Ex. let fn = to(from(3), 5)
+//     fn() -> 3
+//     fn() -> 4
+//     fn() -> undefined
 export const to = () => {}
+
+// Write a function that takes a function and a value as
+// parameters and returns a function. When the returned function
+// is called it should return the value of the passed function,
+// incrementing by the passed functions return value each call
+// until exceeding the value passed, then only undefined should be
+// returned. The function passed should be a generator function.
+// Ex. let fn = to(from(3), 4)
+//     fn() -> 3
+//     fn() -> 4
+//     fn() -> undefined
 export const thru = () => {}
+
+// Write a function that takes two values as parameters and
+// returns a function. When the returned function is called it
+// should return the value first passed in and increment by one
+// each subsequent call until reaching the value passed, then only
+// undefined should be returned.
+// Ex. let fn = fromTo(3, 5)
+//     fn() -> 3
+//     fn() -> 4
+//     fn() -> undefined
 export const fromTo = () => {}
 
 export const collect = () => {}
