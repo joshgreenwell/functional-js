@@ -133,7 +133,13 @@ export const composeb = (fn1, fn2) => (x, y, z) => fn2(fn1(x, y), z)
 // Ex. let fn = limit(add, 1)
 //     fn(3, 1) -> 4
 //     fn(9, 2) -> undefined
-export const limit = () => {}
+export const limit = (fn, lim) => {
+  let count = 0
+  return (...x) => {
+    count += 1
+    return count > lim ? undefined : fn(...x)
+  }
+}
 
 // _____________________________________________________________
 // Catagory 3: Advanced
@@ -149,7 +155,7 @@ export const limit = () => {}
 //     fn() -> 5
 //     ...
 //     fn() -> infinity
-export const from = () => {}
+export const from = x => () => x++
 
 // Write a function that takes a function and a value as
 // parameters and returns a function. When the returned function
@@ -161,7 +167,10 @@ export const from = () => {}
 //     fn() -> 3
 //     fn() -> 4
 //     fn() -> undefined
-export const to = () => {}
+export const to = (fn, x) => () => {
+  const val = fn()
+  return val >= x ? undefined : val
+}
 
 // Write a function that takes a function and a value as
 // parameters and returns a function. When the returned function
@@ -173,7 +182,10 @@ export const to = () => {}
 //     fn() -> 3
 //     fn() -> 4
 //     fn() -> undefined
-export const thru = () => {}
+export const thru = (fn, x) => () => {
+  const val = fn()
+  return val > x ? undefined : val
+}
 
 // Write a function that takes two values as parameters and
 // returns a function. When the returned function is called it
@@ -184,7 +196,7 @@ export const thru = () => {}
 //     fn() -> 3
 //     fn() -> 4
 //     fn() -> undefined
-export const fromTo = () => {}
+export const fromTo = (x, y) => to(from(x), y)
 
 // Write a function that takes an array as a parameter and returns
 // a function that retuns one element from the array, sequentially,
@@ -201,17 +213,27 @@ export const fromTo = () => {}
 //     fn() -> 'a'
 //     fn() -> 'b'
 //     fn() -> 'c'
-export const element = () => {}
+export const element = (arr, fn = from(0)) => () => {
+  const val = fn()
+  // Note: we can't use if(val) because 0 is a valid value
+  return val === undefined ? undefined : arr[val]
+}
 
 // Write a function that takes a generator function and a refernece
 // to an array as parameters and returns a function. When the
 // returned function is called, it should return the value given by
 // the function passed in and adds that value to the array before
 // returning.
-// Ex. let fn = collect(['a', 'b', 'c', 'd'], fromTo(1, 3))
+// Ex. let arr = []
+//     let fn = collect(fromTo(1, 3), arr)
 //     fn() -> 0  | arr = [0]
 //     fn() -> 1  | arr = [0, 1]
-export const collect = () => {}
+export const collect = (fn, arr) => () => {
+  let val = fn()
+  // Note: we can't use if(val) because 0 and '' are valid values
+  if(val !== undefined) { arr.push(val) }
+  return val
+}
 
 // Write a function that returns a function and takes a generator
 // function and a function to filter what is retrned from the returned

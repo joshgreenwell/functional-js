@@ -156,7 +156,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toEqual(undefined)
     })
   })
-  describe.skip('Part 10: More factories', () => {
+  describe('Part 10: More factories', () => {
     it('calls element', () => {
       x = element(['a', 'b', 'c', 'd'], fromTo(1, 3))
       expect(typeof x).toBe('function')
