@@ -111,9 +111,9 @@ export const reverse = () => {}
 //     passed multiplied by itself
 //
 //     let fn = composeu(double, square)
-//     fn(3) -> 81
+//     fn(3) -> 36
 // -or-
-//     composeu(double, square)(3) -> 81
+//     composeu(double, square)(3) -> 36
 export const composeu = () => {}
 
 // This is the same as the 'composeu' function, but it takes two
