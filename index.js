@@ -208,7 +208,8 @@ export const element = () => {}
 // returned function is called, it should return the value given by
 // the function passed in and adds that value to the array before
 // returning.
-// Ex. let fn = collect(['a', 'b', 'c', 'd'], fromTo(1, 3))
+// Ex. let arr = []
+//     let fn = collect(fromTo(1, 3), arr)
 //     fn() -> 0  | arr = [0]
 //     fn() -> 1  | arr = [0, 1]
 export const collect = () => {}
