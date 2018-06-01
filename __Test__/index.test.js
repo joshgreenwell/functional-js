@@ -124,7 +124,7 @@ describe('Functional JavaScript', () => {
       expect(x(1, 2)).toEqual(undefined)
     })
   })
-  describe.skip('Part 9: Factories', () => {
+  describe('Part 9: Factories', () => {
     it('calls from', () => {
       x = fromf(0)
       expect(typeof x).toBe('function')
@@ -156,7 +156,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toEqual(undefined)
     })
   })
-  describe.skip('Part 10: More factories', () => {
+  describe('Part 10: More factories', () => {
     it('calls element', () => {
       x = element(['a', 'b', 'c', 'd'], fromTo(1, 3))
       expect(typeof x).toBe('function')
@@ -201,7 +201,7 @@ describe('Functional JavaScript', () => {
       expect(x()).toEqual(undefined)
     })
   })
-  describe.skip('Part 11: Funwith what we have learned', () => {
+  describe.skip('Part 11: Fun with what we have learned', () => {
     it('calls gensymf', () => {
       x = gensymf('G')
       y = gensymf('H')
