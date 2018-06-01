@@ -229,7 +229,7 @@ export const element = (arr, fn = from(0)) => () => {
 //     fn() -> 0  | arr = [0]
 //     fn() -> 1  | arr = [0, 1]
 export const collect = (fn, arr) => () => {
-  let val = fn()
+  const val = fn()
   // Note: we can't use if(val) because 0 and '' are valid values
   if(val !== undefined) { arr.push(val) }
   return val
@@ -243,7 +243,14 @@ export const collect = (fn, arr) => () => {
 //     fn() -> 0
 //     fn() -> 3
 //     fn() -> undefined
-export const filter = () => {}
+export const filter = (fn, filt) => {
+  const inner = () => {
+    const val = fn()
+    if(val === undefined || filt(val)) { return val }
+    return inner()
+  }
+  return inner
+}
 
 // Write a function that takes a variable number of generator functions
 // and returns a function. Each time the function is called, it will
@@ -254,7 +261,17 @@ export const filter = () => {}
 //     fn() -> 1    --gen1
 //     fn() -> 0    --gen2
 //     fn() -> undefined
-export const concat = () => {}
+export const concat = (...fns) => {
+  let index = 0
+  return () => {
+    let val = fns[index]()
+    if(!(index + 1 >= fns.length) && val === undefined) {
+      index += 1
+      val = fns[index]()
+    }
+    return val
+  }
+}
 
 export const gensymf = () => {}
 export const fibonaccif = () => {}
